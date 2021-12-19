@@ -14,6 +14,7 @@ export async function signup(req, res) {
     }
 
     const hashed = await bcrypt.hash(password, config.bcrypt.saltRounds);
+    console.log(hashed);
     const userId = await userRepository.createUser({
         username,
         password: hashed,

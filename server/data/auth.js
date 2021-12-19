@@ -2,9 +2,19 @@ import bcrypt from 'bcrypt';
 let users = [
     {
         id: '1',
-        username: 'yunjae',
-        password: '12345',
-        name: '윤재',
+        username: 'bob123',
+        password:
+            '$2b$12$ZZYTY25nVvU02kmcB75cd.tCOqmeGeJB5Y24B49Kemx6Kw2qmf6We',
+        name: 'Bob',
+        email: 'kang4609@gmail.com',
+        url: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png',
+    },
+    {
+        id: '2',
+        username: 'sandy',
+        password:
+            '$2b$12$ZZYTY25nVvU02kmcB75cd.tCOqmeGeJB5Y24B49Kemx6Kw2qmf6We',
+        name: 'Sandy',
         email: 'kang4609@gmail.com',
         url: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png',
     },

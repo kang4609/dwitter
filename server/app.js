@@ -6,6 +6,7 @@ import 'express-async-errors';
 import tweetsRoute from './router/tweets.js';
 import authRoute from './router/auth.js';
 import { config } from './config.js';
+import { initSocket } from './connection/socket.js';
 
 const app = express();
 
@@ -25,4 +26,23 @@ app.use((req, res, next) => {
     console.error(error);
     res.sendStatus(500);
 });
-app.listen(config.host.port);
+const server = app.listen(config.host.port);
+initSocket(server);
+
+/*
+const socketIO = new Server(server, {
+    cors: {
+        origin: '*',
+    },
+});
+
+socketIO.on('connection', (socket) => {
+    console.log('Client is here!');
+    socketIO.emit('dwitter', 'Hello 🐣');
+    socketIO.emit('dwitter', 'Hello 🐣');
+});
+
+setInterval(() => {
+    socketIO.emit('dwitter', 'Hello 🐣');
+}, 1000);
+*/
